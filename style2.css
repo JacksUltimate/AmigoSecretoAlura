@@ -1,0 +1,313 @@
+:root {
+    /* Variables de colores para reutilizar en todo el código */
+    --color-primary: #4B69FD; /* Color principal */
+    --color-secondary: #FFF9EB; /* Color secundario */
+    --color-tertiary: #C4C4C4; /* Color terciario */
+    --color-button: #fe652b; /* Color de botones */
+    --color-button-hover: #e55720; /* Color de botón al hacer hover */
+    --color-text: #444444; /* Color del texto */
+    --color-white: #FFFFFF; /* Color blanco */
+}
+
+/* Estilos generales */
+* {
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing:content-box; /* Asegura que el tamaño del box no incluya el padding y los bordes */
+}
+
+body {
+    min-height: 100vh; /* Hace que el body ocupe al menos el 100% de la altura de la ventana */
+    background-color: var(--color-primary); /* Fondo de la página con el color primario */
+    display: flex; /* Utiliza Flexbox para organizar los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    animation: fadeIn 5s ease-in-out; /* Animación para el fondo de la página */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column; /* Establece una dirección de columna para los elementos dentro de main-content */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;  /* Centra los elementos verticalmente */
+    height: 90%; /* Hace que ocupe toda la altura disponible */
+    width: 90%; /* Hace que ocupe todo el ancho disponible */
+    animation: slideUp 0.8s ease-out; /* Animación para el contenido principal */
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%; /* La sección del banner ocupa el 40% del espacio disponible */
+    display: flex;
+    flex-direction: column; /* Establece una disposición de columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 2rem 0 0; /* Espaciado superior */
+    text-align: center; /* Alinea el texto al centro */
+    animation: fadeInRight 3s ease-in-out; /* Animación para el banner */
+}
+
+.header-banner img {
+    max-width: 80%; /* La imagen nunca excederá el 80% del ancho del contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+}
+
+/* Sección de entrada */
+.input-section {
+    flex: 60%; /* La sección de entrada ocupa el 60% del espacio disponible */
+    background-color: var(--color-secondary); /* Fondo con el color secundario */
+    border: 1px solid #000; /* Borde negro */
+    border-radius: 2rem 2rem 2rem 2rem; /* Bordes redondeados en la parte superior */
+    display: flex;
+    flex-direction: column; /* Establece una disposición en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 2rem; /* Espaciado interno */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    animation: fadeInUp 3s ease-in-out; /* Animación para la sección de entrada */
+}
+
+/* Títulos */
+.main-title {
+    font-size: 2.5rem; /* Tamaño de fuente grande para el título principal */
+    font-family: "Merriweather", serif; /* Fuente serif */
+    font-weight: 900; /* Peso de la fuente extra-negrita */
+    font-style: italic; /* Estilo de fuente en cursiva */
+    color: var(--color-white); /* Color blanco */
+}
+
+.section-title {
+    font-family: "Inter", serif; /* Fuente sans-serif */
+    font-size: 2rem; /* Tamaño de fuente más pequeño para subtítulos */
+    font-weight: 700; /* Peso de la fuente en negrita */
+    color: var(--color-primary); /* Color primario */
+    margin: 1rem 0; /* Espaciado superior e inferior */
+    text-align: center; /* Alineación de texto al centro */
+    animation: bounceIn 3s ease; /* Animación */
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    width: 90%; /* Ocupa el 90% del ancho */
+    max-width: 600px; /* Máximo de 600px de ancho */
+    margin-top: 1.5rem; /* Espaciado superior */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten cuando el espacio es limitado */
+}
+
+.input-name {
+    flex: 1; /* Hace que ocupe el 100% del espacio disponible */
+    padding: 0.8rem; /* Espaciado interno */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 1.5rem 0 0 1.5rem; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+    animation: bounceIn 3s ease; /* Animación para los campos de entrada */
+}
+
+/* Estilos de botones */
+button {
+    padding: 1rem; /* Espaciado interno */
+    font-family: "Inter", sans-serif; /* Fuente sans-serif */
+    font-size: 1rem; /* Tamaño de fuente */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 1.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra en el botón */
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre el botón */
+    animation: bounceIn 3s ease; /* Animación para los botones */
+}
+
+.button-add {
+    background-color: var(--color-tertiary); /* Fondo con el color terciario */
+    color: var(--color-text); /* Color del texto */
+    border-radius: 0 1.5rem 1.5rem 0; /* Bordes redondeados en la parte derecha */
+    font-weight: bold;
+}
+
+.button-add:hover {
+    background-color: #a1a1a1; /* Color al hacer hover */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row; /* Alinea los botones horizontalmente */
+}
+
+.button-clean {
+    display: flex;
+    align-items: center; /* Alinea los elementos dentro del botón */
+    justify-content: center; /* Centra los elementos dentro del botón */
+    background-color: #add8e6; /* Fondo azul claro */
+    color: var(--color-text); /* Color del texto */
+    padding: 1rem 2.5rem; /* Espaciado interno */
+    border-radius: 1.5rem; /* Bordes redondeados */
+    margin-top: 1rem; /* Espaciado superior */
+    margin-left: 5%;
+    font-weight: bold;
+}
+
+.button-draw {
+    display: flex;
+    align-items: center; /* Alinea los elementos dentro del botón */
+    justify-content: center; /* Centra los elementos dentro del botón */
+    width: 50%; /* Ocupa el 50% del espacio disponible */
+    padding: 1rem; /* Espaciado interno */
+   
+    color: var(--color-white); /* Texto blanco */
+    background-color: var(--color-button); /* Fondo con el color del botón */
+    font-size: 1rem; /* Tamaño de fuente */
+    border-radius: 1.5rem; /* Bordes redondeados */
+    margin-top: 1rem; /* Espaciado superior */
+    font-weight: bold;
+}
+
+.button-draw img {
+    margin-right: 0.5rem; /* Espaciado derecho entre la imagen y el texto */
+    width: 1.5rem; /* Tamaño de la imagen */
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover); /* Color de fondo al hacer hover */
+}
+
+/* Listas */
+ul {
+    list-style-type: none; /* Elimina los puntos de las listas */
+    color: var(--color-text); /* Color del texto */
+    font-family: "Inter", sans-serif; /* Fuente sans-serif */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    margin: 1rem 0; /* Espaciado superior e inferior */
+    text-align: center; /* Alineación del texto al centro */
+}
+
+.result-list {
+    margin-top: 1rem; /* Espaciado superior */
+    color: #05DF05; /* Color verde brillante */
+    font-size: 1.5rem; /* Tamaño de fuente mayor */
+    font-weight: bold; /* Negrita */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    /* Modificaciones para pantallas más pequeñas */
+
+    
+
+   
+    .main-title {
+        font-size: 2rem; /* Ajusta el tamaño del título principal */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Ajusta el tamaño del subtítulo */
+    }
+
+    .input-wrapper {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .input-section{
+        font-size: 2rem; /* Ajusta el tamaño del título*/
+    }
+
+    .button-add{
+        border-radius: 1rem 1rem 1rem 1rem;
+        width: 30%; 
+    }
+
+    .input-name {
+        border-radius: 1.5rem; /* Bordes redondeados */
+        margin-bottom: 1rem; /* Espaciado inferior */
+        width: 80%;
+    }
+    
+
+    .button-container {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra los elementos */
+        width: 50%; /* Hace que los botones ocupen el 100% del ancho */
+        text-align: center; /* Centra los botones */
+    }
+
+    .button-draw {
+        padding: 1rem;
+        width: 80%; /* El botón ocupará el 80% del espacio */
+    }
+
+    .button-clean {
+        padding: 1rem;
+        width: 80%; /* El botón ocupará el 80% del espacio */
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    /* Modificaciones para pantallas aún más pequeñas */
+    .main-title {
+        font-size: 1.8rem; /* Ajusta el tamaño del título principal */
+    }
+
+    .section-title {
+        font-size: 1.3rem; /* Ajusta el tamaño del subtítulo */
+    }
+
+    .input-wrapper {
+        width: 100%; /* Hace que el contenedor ocupe todo el ancho */
+    }
+    
+
+    .button-draw {
+        width: 50%; /* Hace que el botón ocupe todo el ancho */
+    }
+
+    button {
+        font-size: 0.9rem; /* Ajusta el tamaño de fuente de los botones */
+    }
+}
